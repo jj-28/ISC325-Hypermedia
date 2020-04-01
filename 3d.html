@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>AR 3D Photo Example Ar Fam .JS</title>
+
+<script src="js/aframe_min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/aframe-animation.js"></script>
+<script src="js/aframe-look.js"></script>
+<script src="js/JSONLoader.js"></script>
+		
+	<style>
+		#sky {
+		}
+		video {
+			position: static;
+			top: 95%;
+			left: 95%;
+			bottom: 10px;
+			right: 0px;
+		}
+	</style>
+</head>
+
+<body>
+
+<a-scene id="play">
+		
+		<a-assets>
+			<img alt="360 image" id="sky" src="TowerBig.jpg">
+			<!-- <video id="historian-info" autoplay loop="true" src="play.mp4"></video> -->
+			<img id="link" src="arrow.png">
+			
+		</a-assets>
+		
+		<a-sky radius="10000" width="3" height="1.5" src="#sky"></a-sky>
+		
+		<a-text align="center" font="kelsonsans" value="Oswego NY" width="6" position="1 0.7 -2"
+              rotation="0 15 0"></a-text>
+		
+		<!-- <a-video fixed src="#historian-info" width="16" height="9" position="0 0 -20"></a-video> -->
+		
+		
+		
+	<a-entity id="cam" camera position="0 1.6 0" look-controls>
+        <a-entity cursor="fuse:true;fuseTimeout:2000"
+                  geometry="primitive:ring;radiusInner:0.01;radiusOuter:0.02"
+                  position="0 0 -1.8"
+                  material="shader:flat;color:#ff0000"
+                  animation__mouseenter="property:scale;to:3 3 3;startEvents:mouseenter;endEvents:mouseleave;dir:reverse;dur:2000;loop:1">
+        </a-entity>
+    </a-entity>
+	
+	<!-- <a-image  src="#link" ></a-image> -->
+	<a-link id="next" href="scene2.html" image="#link" position="-20 0 30" title="Go to scene2" peekMode="false" size="1"></a-link>
+
+</a-scene>
+
+	
+</body>
+</html>
